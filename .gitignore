@@ -1,42 +1,61 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
+# Created by https://www.toptal.com/developers/gitignore/api/angular,visualstudiocode,compodoc
+# Edit at https://www.toptal.com/developers/gitignore?templates=angular,visualstudiocode,compodoc
 
-# Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
+### Angular ###
+## Angular ##
+# compiled output
+dist/
+tmp/
+app/**/*.js
+app/**/*.js.map
 
-# Node
-/node_modules
-npm-debug.log
-yarn-error.log
+# dependencies
+node_modules/
+bower_components/
 
 # IDEs and editors
 .idea/
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
 
-# Visual Studio Code
+# misc
+.sass-cache/
+connect.lock/
+coverage/
+libpeerconnection.log/
+npm-debug.log
+testem.log
+typings/
+.angular/
+
+# e2e
+e2e/*.js
+e2e/*.map
+
+# System Files
+.DS_Store/
+
+### Compodoc ###
+# gitignore template for the Compodoc, UI guide for front apps
+# website: https://compodoc.app/
+
+documentation/
+
+### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-.history/*
+!.vscode/*.code-snippets
 
-# Miscellaneous
-/.angular/cache
-.sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
+# Local History for Visual Studio Code
+.history/
 
-# System files
-.DS_Store
-Thumbs.db
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+# End of https://www.toptal.com/developers/gitignore/api/angular,visualstudiocode,compodoc

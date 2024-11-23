@@ -1,27 +1,76 @@
-# NgMaterialDatetimeGeorgian
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
 
-## Development server
+# ng-material-datetime-georgian
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+A customizable Georgian datetime picker for Angular applications, built with Angular Material and Moment.js. This library supports both Reactive Forms and Template-Driven Forms, offering features like time selection, custom validation, and locale support.
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Georgian datetime selection with Material Design.
+- Time selection (hours and minutes).
+- Locale-aware date handling using Moment.js.
+- Compatibility with Angular Reactive and Template-Driven Forms.
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/alimirdeveloper/ng-material-datetime-georgian.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd ng-material-datetime-georgian
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Running unit tests
+## Usage
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Import the datetime picker component into your Angular application:
 
-## Running end-to-end tests
+```ts
+import { MindboardDatetimeGeorgianComponent } from 'path-to-component';
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Add it to your template:
 
-## Further help
+```html
+<material-datetime-georgian
+  [placeholder]="'Select Date and Time'"
+  [minDate]="minDate"
+  [maxDate]="maxDate"
+  [(ngModel)]="selectedDate"
+></material-datetime-georgian>
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Inputs
+
+| Input         | Type    | Description                        |
+|---------------|---------|------------------------------------|
+| `placeholder` | `string` | Placeholder text for the input.   |
+| `minDate`     | `Date`  | Minimum selectable date.          |
+| `maxDate`     | `Date`  | Maximum selectable date.          |
+
+### Outputs
+
+| Output         | Type        | Description               |
+|----------------|-------------|---------------------------|
+| `ngModel`      | `Moment`    | Selected date and time.   |
+
+## Development
+
+1. Run the development server:
+   ```bash
+   ng serve
+   ```
+2. Navigate to `http://localhost:4200`.
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request with your changes.
+
+## License
+
+This project is licensed under the MIT License.
