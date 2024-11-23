@@ -1,0 +1,40 @@
+.time-picker-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background-color: white;
+}
+.outline {
+  height: 48px;
+
+  background: white;
+  border-radius: 8px;
+  border: 2px #e33492 solid;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  display: inline-flex;
+  flex-shrink: 0;
+  span {
+    color: var(--text-s-dark, #861f88);
+    text-align: right;
+    // text-wrap: nowrap;
+  }
+  width: 70px;
+  &:hover {
+    border-radius: 8px;
+    background: var(--primary-p-dark, #b62a75);
+    color: var(--text-white, #fff);
+    span {
+      color: var(--text-white, #fff);
+    }
+  }
+}
+.date-layout {
+  display: flex;
+  flex-direction: column;
+  &.title {
+    font-size: 14px;
+  }
+  gap: 12px;
+}

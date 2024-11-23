@@ -1,0 +1,64 @@
+<div class="spacing-small d-grid ">
+    <mat-label class="title">{{label}}</mat-label>
+    <div>
+        <mat-form-field appearance="outline">
+
+            @if(controller){
+            <input [formControl]="controller"
+                matInput
+                placeholder="{{ (placeholder || '')  }}"
+                [min]="minDate"
+                [max]="maxDate"
+                [disabled]="!!disabled ? true : false"
+                [matDatepicker]="picker">
+            }
+            @else {
+            <input [(ngModel)]="value"
+                matInput
+                placeholder="{{ (placeholder || '')  }}"
+                [min]="minDate"
+                [max]="maxDate"
+                [disabled]="!!disabled ? true : false"
+                [matDatepicker]="picker">
+
+            }
+            <mat-datepicker-toggle matSuffix
+                [for]="picker" />
+            <mat-datepicker #picker>
+                <mat-datepicker-actions>
+                    <div class="d-flex flex-column justify-content-center w-100">
+
+                        <div class="d-flex justify-content-center align-items-center spacing-small p-small">
+                            <input appearance="outline"
+                                [formControl]="timeHourModel"
+                                type="time">
+                        </div>
+                        <div style="height: 10px;"></div>
+                        <hr>
+                        <div class="d-flex justify-content-end  spacing-small">
+
+                            <button mat-button
+                                class="outline"
+                                matDatepickerCancel>
+                                <label> Cancel </label>
+                            </button>
+                            <button mat-raised-button
+                                class="outline"
+                                color="primary"
+                                (click)="onApplyTime(   )"
+                                matDatepickerApply>
+                                <label> Apply </label>
+
+                            </button>
+                        </div>
+                    </div>
+                </mat-datepicker-actions>
+            </mat-datepicker>
+
+            @if(controller && controller.errors){
+            <mat-error class="caption-medium">{{(controller.errors ) }}
+            </mat-error>
+            }
+        </mat-form-field>
+    </div>
+</div>
